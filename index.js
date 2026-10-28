@@ -220,3 +220,7 @@ app.use((err, req, res, next) => {
         500
     )
 })
+
+app.listen(port, () => {
+    console.log(`Server berjalan di http://localhost:${port}`);
+})
