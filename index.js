@@ -33,3 +33,12 @@ app.use((req, res, next) => {
 
     next();
 });
+
+function successResponse(res, data, statusCode = 200) {
+    res.status(statusCode).json({
+        status: 'success',
+        data: data
+    });
+}
+
+
