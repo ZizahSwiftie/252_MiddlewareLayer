@@ -159,3 +159,17 @@ app.put(
             RETURNING *`,
             [nama, nim, kelas, id]
         )
+
+        if (result.rowCount === 0) {
+            return errorResponse(
+                res, 'Data tidak ditemukan', 404
+            )
+        }
+
+        return successResponse(
+            res,
+            'Data berhasil diperbarui',
+            result.rows[0]
+        )
+    }
+)
