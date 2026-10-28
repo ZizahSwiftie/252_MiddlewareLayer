@@ -43,8 +43,10 @@ function successResponse(res, data, statusCode = 200) {
 
 function errorResponse(res, message, status, details = null) {
     res.status(status).json({
-        status: 'error',
-        message: message,
-        details: details
+        status: false,
+        message,
+        data: null,
+        error: details,
     });
 }
+
